@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.espe.tdd.stringcalculatorkata;
 
 public class StringCalculator {
@@ -21,6 +18,9 @@ public class StringCalculator {
 
     for (String p : partes) {
         suma += Integer.parseInt(p);
+        if (Integer.parseInt(p) < 0) {
+    throw new IllegalArgumentException("Negativo no permitido: " + p);
+}
     }
     return suma;
     }

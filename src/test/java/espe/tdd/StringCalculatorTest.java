@@ -42,5 +42,13 @@ void delimitadorPersonalizado() {
     StringCalculator calc = new StringCalculator();
     assertEquals(3, calc.add("//;\n1;2"));
 }
+@Test
+void numerosNegativosLanzanExcepcion() {
+    StringCalculator calc = new StringCalculator();
+    Exception ex = assertThrows(IllegalArgumentException.class,
+            () -> calc.add("1,-2,3"));
+    assertTrue(ex.getMessage().contains("-2"));
+}
+
 
 }
