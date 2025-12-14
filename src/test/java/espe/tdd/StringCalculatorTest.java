@@ -25,5 +25,11 @@ void dosNumerosSeparadosPorComa() {
     assertEquals(3, calc.add("1,2"));
 }
 
+@Test
+void variosNumeros() {
+    StringCalculator calc = new StringCalculator();
+    assertEquals(6, calc.add("1,2,3"));
+}
+
 
 }
