@@ -37,4 +37,10 @@ void soportaSaltosDeLinea() {
     assertEquals(6, calc.add("1\n2,3"));
 }
 
+@Test
+void delimitadorPersonalizado() {
+    StringCalculator calc = new StringCalculator();
+    assertEquals(3, calc.add("//;\n1;2"));
+}
+
 }
