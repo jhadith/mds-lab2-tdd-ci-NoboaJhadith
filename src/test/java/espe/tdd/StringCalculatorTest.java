@@ -12,4 +12,43 @@ public class StringCalculatorTest {
         StringCalculator calc = new StringCalculator();
         assertEquals(0, calc.add(""));
     }
+    
+    @Test
+void unNumeroDevuelveElMismoNumero() {
+    StringCalculator calc = new StringCalculator();
+    assertEquals(1, calc.add("1"));
+}
+
+@Test
+void dosNumerosSeparadosPorComa() {
+    StringCalculator calc = new StringCalculator();
+    assertEquals(3, calc.add("1,2"));
+}
+
+@Test
+void variosNumeros() {
+    StringCalculator calc = new StringCalculator();
+    assertEquals(6, calc.add("1,2,3"));
+}
+
+@Test
+void soportaSaltosDeLinea() {
+    StringCalculator calc = new StringCalculator();
+    assertEquals(6, calc.add("1\n2,3"));
+}
+
+@Test
+void delimitadorPersonalizado() {
+    StringCalculator calc = new StringCalculator();
+    assertEquals(3, calc.add("//;\n1;2"));
+}
+@Test
+void numerosNegativosLanzanExcepcion() {
+    StringCalculator calc = new StringCalculator();
+    Exception ex = assertThrows(IllegalArgumentException.class,
+            () -> calc.add("1,-2,3"));
+    assertTrue(ex.getMessage().contains("-2"));
+}
+
+
 }
