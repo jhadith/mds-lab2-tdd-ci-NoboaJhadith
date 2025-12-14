@@ -9,7 +9,8 @@ public class StringCalculator {
   public int add(String numbers) {
         if (numbers.isEmpty()) return 0;
 
-    String[] partes = numbers.split(",");
+    String[] partes = numbers.split("[,\n]");
+
     int suma = 0;
 
     for (String p : partes) {

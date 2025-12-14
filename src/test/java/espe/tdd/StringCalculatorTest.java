@@ -31,5 +31,10 @@ void variosNumeros() {
     assertEquals(6, calc.add("1,2,3"));
 }
 
+@Test
+void soportaSaltosDeLinea() {
+    StringCalculator calc = new StringCalculator();
+    assertEquals(6, calc.add("1\n2,3"));
+}
 
 }
