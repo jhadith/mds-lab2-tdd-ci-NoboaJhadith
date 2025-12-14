@@ -7,7 +7,14 @@ package com.espe.tdd.stringcalculatorkata;
 public class StringCalculator {
     
   public int add(String numbers) {
-           if (numbers.isEmpty()) return 0;
-    return Integer.parseInt(numbers);
+        if (numbers.isEmpty()) return 0;
+
+    String[] partes = numbers.split(",");
+    int suma = 0;
+
+    for (String p : partes) {
+        suma += Integer.parseInt(p);
+    }
+    return suma;
     }
 }

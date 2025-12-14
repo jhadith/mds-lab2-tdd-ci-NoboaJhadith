@@ -19,4 +19,11 @@ void unNumeroDevuelveElMismoNumero() {
     assertEquals(1, calc.add("1"));
 }
 
+@Test
+void dosNumerosSeparadosPorComa() {
+    StringCalculator calc = new StringCalculator();
+    assertEquals(3, calc.add("1,2"));
+}
+
+
 }
