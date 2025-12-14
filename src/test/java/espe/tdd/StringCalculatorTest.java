@@ -22,7 +22,8 @@ void unNumeroDevuelveElMismoNumero() {
 @Test
 void dosNumerosSeparadosPorComa() {
     StringCalculator calc = new StringCalculator();
-  assertEquals(10, calc.add("1,2"));
+  assertEquals(3, calc.add("1,2"));
+
 
 }
 
